@@ -3,6 +3,7 @@ import {
   Alert,
   FlatList,
   StyleSheet,
+  Text,
   TextInput,
   TouchableOpacity,
   View,
@@ -54,6 +55,13 @@ const Styles = StyleSheet.create({
   TodoListContainer: {
     flexGrow: 1,
     paddingBottom: 16,
+  },
+  TodoEmpty: {
+    width: '100%',
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
 
@@ -118,6 +126,9 @@ const Todos = () => {
             onChangeTitle={(title) => handleUpdate(title, index)}
             onRemove={() => handleRemove(index)}
           />
+        )}
+        ListEmptyComponent={() => (
+          <Text style={Styles.TodoEmpty}>Nenhum TODO adicionado</Text>
         )}
       />
     </View>
