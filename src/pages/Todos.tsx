@@ -83,7 +83,11 @@ const Todos = () => {
   };
 
   const handleRemove = (removedIndex: number) => {
-    const newTodosList = todos.filter((todo, index) => index !== removedIndex);
+    let newTodosList = [...todos];
+
+    newTodosList = newTodosList.filter(
+      (title, index) => index !== removedIndex,
+    );
 
     setTodos(newTodosList);
   };

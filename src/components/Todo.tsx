@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -51,6 +51,10 @@ type Props = {
 const Todo = ({title, onChangeTitle, onRemove}: Props) => {
   const [text, setText] = useState<string>(title);
 
+  useEffect(() => {
+    setText(title);
+  }, [title]);
+
   const [editing, setEditing] = useState<boolean>(false);
 
   const handleChanged = () => {
@@ -84,7 +88,7 @@ const Todo = ({title, onChangeTitle, onRemove}: Props) => {
             onChangeText={setText}
           />
         ) : (
-          <Text style={Styles.TodoName}>{text}</Text>
+          <Text style={Styles.TodoName}>{title}</Text>
         )}
       </View>
 

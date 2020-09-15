@@ -64,6 +64,7 @@ const Identification = () => {
       <TextInput
         style={Styles.Input}
         placeholder="Digite seu nome"
+        placeholderTextColor="white"
         value={name}
         onChangeText={setName}
       />
