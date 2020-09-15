@@ -83,7 +83,7 @@ const Todo = ({title, onChangeTitle, onRemove}: Props) => {
             style={Styles.TodoName}
             editable={editing}
             placeholder="Add Credit"
-            placeholderTextColor="ffffff"
+            placeholderTextColor="white"
             value={text}
             onChangeText={setText}
           />
